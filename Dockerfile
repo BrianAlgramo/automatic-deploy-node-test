@@ -1,5 +1,5 @@
 # Node image.
-FROM node:12
+FROM node:12-alpine
 
 # Server Directory
 WORKDIR /server
@@ -11,5 +11,7 @@ RUN npm install
 
 #Bundle app source
 COPY . .
+
+EXPOSE 8080
 
 CMD ["npm","start"]
