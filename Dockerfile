@@ -15,7 +15,7 @@ RUN npm install
 COPY . .
 
 RUN npm run build
-COPY .env ./dist/
+# COPY .env ./dist/
 
 EXPOSE 8080
 
