@@ -1,6 +1,8 @@
 # Node image.
 FROM node:12-alpine
 
+RUN apk update && apk add bash
+
 # Server Directory
 WORKDIR /server
 
@@ -11,6 +13,8 @@ RUN npm install
 
 #Bundle app source
 COPY . .
+
+RUN npm run build
 
 EXPOSE 8080
 

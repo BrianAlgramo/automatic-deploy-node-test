@@ -2,10 +2,10 @@
   "name": "rest-dashsupport-ts",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
   "scripts": {
-    "start": "concurrently \"tsc --watch\" \"nodemon dist/\"",
-    "build": "tsc --watch"
+    "start": "concurrently \"nodemon dist/app\"",
+    "dev": "concurrently \"tsc --watch\" \"nodemon dist/app\"",
+    "build": "tsc -b"
   },
   "keywords": [],
   "author": "",
