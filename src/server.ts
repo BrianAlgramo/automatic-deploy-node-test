@@ -14,4 +14,14 @@ server.use(morgan('dev'));
 server.use(bodyParser.urlencoded({extended: false}));
 server.use(bodyParser.json());
 
+/*
+*Routes
+*/
+import dashboardRoute from './Routes/Project.route';
+
+/**
+ * Setup routes
+ */
+server.use('/project', dashboardRoute);
+
 export default server;
