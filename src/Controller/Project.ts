@@ -1,10 +1,11 @@
 import axios from "axios";
 import express from 'express';
+import { Headers } from "../Middleware/CustomHeader"
 
 
 export const root = (request: express.Request, response: express.Response): void => 
 {
-    response.send("Este es el root");
+    response.status(404).json("Not Found")
 }
 
 /**
@@ -143,7 +144,6 @@ export const getMeanTimeToFaliure = (request: express.Request, response: express
  * Mean Time to faliure
  */
 export const getMeanTimeBetweenFaliure = (request: express.Request, response: express.Response): void => {
-
     axios.get(`${process.env.JIRA}/search?jql=project=${request.params.projectId}`,
     {
         method: 'GET',
